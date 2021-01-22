@@ -13,6 +13,9 @@ body{
   background-image: url("corona.jpg");
 }
 
+MenuItem{
+  border-color: rgb(255, 255, 255);
+}
 
 
 .app__header{
@@ -30,6 +33,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
+
 }
 
 @media(max-width :990px){

@@ -127,9 +127,9 @@ function App() {
       </div>
 <Card className = "app_right">
       <CardContent>
-        <h3>Live Cases by Country</h3>
+        <h2>Live Cases by Country</h2>
         <Table countries ={tableData}/>
-        <h3>Worldwide new Cases</h3>
+        <h2>Worldwide new Cases</h2>
         <LineGraph/>
       </CardContent>
 </Card>
