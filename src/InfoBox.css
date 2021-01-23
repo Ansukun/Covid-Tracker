@@ -9,6 +9,10 @@
 .infoBox--selected {
   border-top: 10px solid greenyellow;
 }
+.infoBox {
+  flex: 1;
+  cursor: pointer;
+}
 
 .infoBox--red {
   border-color: red;

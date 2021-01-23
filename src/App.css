@@ -13,7 +13,7 @@ body{
   background-image: url("corona.jpg");
 }
 
-MenuItem{
+.MenuItem{
   border-color: rgb(255, 255, 255);
 }
 

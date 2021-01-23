@@ -85,7 +85,7 @@ function App() {
          onChange ={onCountryChange}
          value = {country} >
 
-          <MenuItem value = "worldwide"> <h3>Worldwide</h3></MenuItem>
+          <MenuItem  value = "worldwide"> <h3>Worldwide</h3></MenuItem>
            {
              countries.map(country =>(
                <MenuItem value = {country.value}>{country.name}</MenuItem>
@@ -101,18 +101,21 @@ function App() {
       
      <div className = "app__stats">
        <InfoBox 
+       active = {casesType === "cases"}
        onClick={(e) => setCasesType("cases")}
        title = "Coronavirus Cases" 
        isRed
        cases = {prettyPrintStat(countryInfo.todayCases)} 
        total = {numeral(countryInfo.cases).format("0.0a")} />
        <InfoBox
+       active = {casesType === "recovered"}
        onClick={(e) => setCasesType("recovered")}
         title = "Recoverd"  
         cases = {prettyPrintStat(countryInfo.todayRecovered)} 
         total = {numeral(countryInfo.recovered).format("0.0a")} />
        <InfoBox title = "Deaths"
        isRed
+       active = {casesType === "deaths"}
         onClick={(e) => setCasesType("deaths")} 
         cases = {prettyPrintStat(countryInfo.todayDeaths)} 
        total = {numeral(countryInfo.deaths).format("0.0a")} />
