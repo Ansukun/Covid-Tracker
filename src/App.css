@@ -23,6 +23,7 @@ body{
   align-items: center;
   margin-bottom: 20px;
   justify-content: space-between;
+
 }
 .app__stats{
   display: flex;
@@ -47,7 +48,9 @@ body{
 
 .app__left{
   flex: 0.9;
-  margin-bottom: 20px
+  /* margin-bottom: 8px; */
+  
+  
 }
 
 
@@ -57,4 +60,9 @@ body{
   background-color: rgb(51, 48, 48);
   color: #bbb;
   padding: 10px;
+}
+
+
+.menu{
+  background-color: antiquewhite;
 }
