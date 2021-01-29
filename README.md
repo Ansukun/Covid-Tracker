@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Check Out the Deployed Version https://ansukun.github.io/Covid-Tracker/
 
 ## Available Scripts
 
