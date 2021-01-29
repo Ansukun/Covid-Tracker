@@ -56,24 +56,30 @@ function App() {
    const countryCode = event.target.value;
     setCountry(countryCode)
 
-   const url = countryCode=== "worldwide" ? "https://disease.sh/v3/covid-19/all" : 
-                        `https://disease.sh/v3/covid-19/countries/${countryCode}`;
-   
-    await fetch(url)
-
-    .then(response => response.json())
-    .then(data => {
-      setCountry(countryCode)
+    const url =
+    countryCode === 'worldwide'
+      ? 'https://disease.sh/v3/covid-19/all'
+      : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+  await fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      setCountry(countryCode);
       setCountryInfo(data);
 
-      setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-      setMapZoom(4);
+     
+      if (typeof data.countryInfo !== 'undefined') {
+        const {
+          countryInfo: { lat, long },
+        } = data;
+        setMapCenter({ lat, lng: long });
 
-    })
-    console.log(countryInfo)
-    
-   };
-   
+        setMapZoom(4);
+      } else {
+        setMapCenter({ lat: 34.80746, lng: -40.4796 });
+        setMapZoom(3);
+      }
+    });
+};
    
   return (
     <div className="app">
@@ -85,7 +91,7 @@ function App() {
                   onChange ={onCountryChange}
                   value = {country} >
 
-              <MenuItem  className = "menu" value = "worldwide"> <h3>Worldwide</h3></MenuItem>
+              <MenuItem   value = "worldwide"> <h3>Worldwide</h3></MenuItem>
                 {
                 countries.map(country =>(
               <MenuItem value = {country.value}>{country.name}</MenuItem>
